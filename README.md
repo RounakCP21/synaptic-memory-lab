@@ -4,6 +4,10 @@
 
 Synaptic Memory Lab is an interactive, browser-native research artifact for the DataForge 2026 Pathway Track. It lets learners write cue–target associations into a recurrent synaptic matrix, probe that matrix, and deliberately push it into interference. The central mechanism is deliberately small enough to inspect:
 
+- **Public artifact:** https://violet-spiffy-operatingsystem--rounakbiswas47.replit.app
+- **Public source repository:** https://github.com/RounakCP21/synaptic-memory-lab
+- **One-page concept summary:** [`docs/concept-summary.pdf`](docs/concept-summary.pdf)
+
 ```text
 M_t = λ M_(t−1) + η (k_t ⊗ v_t)
 y_t = M_t q_t
