@@ -123,7 +123,7 @@ The app uses this to expose one plausible signal-to-noise intervention: suppress
 git clone <repository-url>
 cd <repository-directory>
 pnpm install
-pnpm --filter @workspace/synaptic-memory-lab run dev
+PORT=5000 BASE_PATH=/ pnpm --filter @workspace/synaptic-memory-lab run dev
 ```
 
 Open the preview served by the project. The app is a static Vite bundle and does not require `DATABASE_URL`, a model key, or a third-party integration.
@@ -131,8 +131,8 @@ Open the preview served by the project. The app is a static Vite bundle and does
 For a production build:
 
 ```bash
-pnpm --filter @workspace/synaptic-memory-lab run typecheck
-pnpm --filter @workspace/synaptic-memory-lab run build
+PORT=5000 BASE_PATH=/ pnpm --filter @workspace/synaptic-memory-lab run typecheck
+PORT=5000 BASE_PATH=/ pnpm --filter @workspace/synaptic-memory-lab run build
 ```
 
 ### Suggested experiment protocol
