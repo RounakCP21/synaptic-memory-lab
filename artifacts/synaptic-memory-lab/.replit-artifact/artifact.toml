@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Synaptic Memory Lab"
+description = "An interactive visual essay for testing Hebbian synaptic memory, retrieval interference, sparse BDH-style firing, and the capacity limits of fixed recurrent state."
+version = "1.0.0"
+id = "artifacts/synaptic-memory-lab"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22081
+
+[services.development]
+run = "pnpm --filter @workspace/synaptic-memory-lab run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/synaptic-memory-lab", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/synaptic-memory-lab/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22081"
+BASE_PATH = "/"
