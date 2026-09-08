@@ -21,10 +21,10 @@ Associating context with outer-product Hebbian writes into a recurrent matrix ca
 
 ## What to test
 
-1. Start with **Perfect Recall** and inspect the bright, localized writes.
+1. Start with **Low key overlap** and inspect the localized writes.
 2. Raise **Key interference** or **Memory load** until the retrieved vector blurs.
 3. Set **Decay** below 1.0 and watch older traces attenuate.
-4. Enable **BDH sparse mode** to apply a non-negative threshold to keys, values, and queries.
+4. Enable the **thresholded readout** to apply a non-negative threshold after the matrix multiply.
 5. Compare the live estimate `y = Mq` with the ground-truth target and read both cosine similarity and mean squared error.
 
 The artifact is educational and falsifiable. It is not a reproduction of a language-model benchmark, a claim that biological synapses implement this exact matrix, or a substitute for the BDH paper’s full architecture.
@@ -137,7 +137,11 @@ PORT=5000 BASE_PATH=/ pnpm --filter @workspace/synaptic-memory-lab run build
 
 ### Suggested experiment protocol
 
-Record the baseline with `λ=1`, moderate `η`, two associations, and zero interference. Then hold decay and plasticity constant while increasing only key collinearity. Next hold collinearity low and increase load from 2 to 20. Finally repeat both sweeps with BDH sparse mode enabled. Report the full parameter vector, cosine similarity, MSE, and whether the failure was caused by decay, collision, or load.
+Record the baseline with `λ=1`, moderate `η`, two associations, and zero interference. Then hold decay and plasticity constant while increasing only key collinearity. Next hold collinearity low and increase load from 2 to 20. Finally repeat both sweeps with the thresholded readout enabled. Report the full parameter vector, cosine similarity, MSE, and whether the failure was caused by decay, collision, or load.
+
+### Included browser experiment
+
+The page includes experiment E-01, a six-point deterministic sweep over key collinearity from 0% to 100%. It holds `d=8`, load at 8 writes, `λ=0.92`, `η=0.72`, dense readout, and the final write as the query target. The chart and table show the resulting cosine similarities directly from the same engine used by the sandbox. This is a descriptive toy measurement: it has no randomized seeds, confidence intervals, learned parameters, or benchmark comparison.
 
 ## Evidence discipline
 
@@ -159,7 +163,7 @@ The heatmap and metrics in this repository are original browser experiments on a
 
 ## AI assistance disclosure
 
-AI assistance was used to draft the initial implementation, interaction copy, and technical documentation. The scientific framing, equations, experiment variables, evidence boundaries, and citations should be reviewed by the author before submission. The browser engine is intentionally transparent and should be inspected rather than treated as an authoritative simulator of a biological nervous system.
+AI assistance supported the first implementation and copy editing. The model, fixed settings, evidence boundaries, and citations are kept explicit so a human reviewer can inspect them. The browser engine is intentionally transparent and should not be treated as an authoritative simulator of a biological nervous system.
 
 ## Asset provenance
 
@@ -167,4 +171,4 @@ The artifact uses code-generated interface graphics only: the matrix heatmap, ve
 
 ## License
 
-MIT License. See `LICENSE` if a license file is added to the public repository.
+MIT License. See `LICENSE`.

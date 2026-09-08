@@ -43,7 +43,7 @@ The table is a mechanism-level comparison, not a claim that the systems are inte
 
 ### Evidence discipline
 
-The BDH preprint reports developer-run scaling and task experiments; those results remain developer-reported unless independently reproduced. A reproduction matches the stated protocol and metrics in a separate implementation. A production deployment establishes operational use, not benchmark validity. This project claims none of those outcomes: its cosine similarity and MSE come from a deterministic browser toy engine.
+The BDH preprint reports developer-run scaling and task experiments; those results remain developer-reported unless independently reproduced. A reproduction matches the stated protocol and metrics in a separate implementation. A production deployment establishes operational use, not benchmark validity. This project claims none of those outcomes: its cosine similarity and MSE come from a deterministic browser toy engine. The page includes one descriptive six-point sweep over key collinearity with fixed settings, but it does not estimate uncertainty or establish a general capacity law.
 
 ### Limitations and open problems
 

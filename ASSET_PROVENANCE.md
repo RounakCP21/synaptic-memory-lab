@@ -15,4 +15,4 @@ This record covers the material shipped in the public repository.
 
 ## Disclosure
 
-AI assistance was used to draft implementation code, interaction copy, documentation, and the first-pass concept summary. The author should review the equations, citations, source terms, and final experimental claims before public submission. No secret, credential, private dataset, or proprietary model weight is included.
+AI assistance supported the first implementation, interaction copy, documentation, and editorial revisions. The author should review the equations, citations, source terms, and final experimental claims before public submission. No secret, credential, private dataset, or proprietary model weight is included.
